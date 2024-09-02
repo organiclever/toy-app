@@ -30,5 +30,26 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install
 
+      - name: Install required libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwoff1 \
+            libopus0 \
+            libvpx6 \
+            libevent-2.1-7 \
+            libgstreamer1.0-0 \
+            libgstreamer-plugins-base1.0-0 \
+            libgstreamer-gl1.0-0 \
+            libgstreamer-plugins-good1.0-0 \
+            libgstreamer-plugins-bad1.0-0 \
+            libgstreamer-plugins-ugly1.0-0 \
+            libharfbuzz-icu0 \
+            libhyphen0 \
+            libmanette-0.2-0 \
+            libflite1 \
+            libgles2 \
+            libx264-160
+
       - name: Run end-to-end tests
         run: npm run test:e2e
