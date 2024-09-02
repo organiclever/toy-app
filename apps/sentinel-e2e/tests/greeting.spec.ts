@@ -4,12 +4,13 @@ import { BASE_URL } from '../config';
 test('Greeting page should display hello and have navigation', async ({
   page,
 }) => {
-  // Navigate to the greeting page
-  await page.goto(`${BASE_URL}/greeting`);
+  // Navigate to the greeting page with a query string
+  const name = 'John';
+  await page.goto(`${BASE_URL}/greeting?name=${name}`);
 
-  // Check if the h1 element contains the text "hello"
+  // Check if the h1 element contains the text "Hello John"
   const heading = await page.locator('h1');
-  await expect(heading).toHaveText('hello');
+  await expect(heading).toHaveText(`Hello ${name}`);
 
   // Check if the navigation links are present
   const navLinks = await page.locator('nav a');
