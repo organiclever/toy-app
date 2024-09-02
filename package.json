@@ -6,9 +6,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:sentinel-ui": "npm run dev --prefix apps/sentinel-ui",
     "test:e2e": "npm run test --prefix apps/sentinel-e2e",
-    "test:e2e:ui": "npm run test:ui --prefix apps/sentinel-e2e"
+    "test:e2e:ui": "npm run test:ui --prefix apps/sentinel-e2e",
+    "prepare": "npx husky init"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "husky": "^9.1.5",
+    "prettier": "^3.3.3"
+  }
 }
