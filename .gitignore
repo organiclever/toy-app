@@ -226,3 +226,26 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Playwright test results and reports
+playwright-report/
+test-results/
+trace-results/
+
+# Playwright downloads
+downloads/
+
+# Playwright screenshots
+screenshots/
+
+# Playwright videos
+videos/
+
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# Environment variables
+.env
