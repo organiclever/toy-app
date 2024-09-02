@@ -27,5 +27,8 @@ jobs:
       - name: Install projects
         run: npm run concurrently:install
 
+      - name: Install playwright
+        run: npx playwright install
+
       - name: Run end-to-end tests
         run: npm run test:e2e
