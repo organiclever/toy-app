@@ -1,5 +1,7 @@
 # Sentinel UI
 
+[![End-to-End Tests](https://github.com/organiclever/sentinel/actions/workflows/e2e-tests.yml/badge.svg)](https://github.com/organiclever/sentinel/actions/workflows/e2e-tests.yml)
+
 Sentinel UI is a Next.js application designed to provide a user-friendly interface for monitoring and managing various aspects of your system. This project includes a simple navigation system and demonstrates the use of query parameters in Next.js.
 
 ## Table of Contents
