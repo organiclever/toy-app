@@ -1,9 +1,11 @@
 import { test, expect } from '@playwright/test';
 import { BASE_URL } from '../config';
 
-test('Home page should display hello and have navigation', async ({ page }) => {
-  // Navigate to the home page
-  await page.goto(BASE_URL);
+test('Greeting page should display hello and have navigation', async ({
+  page,
+}) => {
+  // Navigate to the greeting page
+  await page.goto(`${BASE_URL}/greeting`);
 
   // Check if the h1 element contains the text "hello"
   const heading = await page.locator('h1');
