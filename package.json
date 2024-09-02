@@ -7,12 +7,15 @@
     "dev:sentinel-ui": "npm run dev --prefix apps/sentinel-ui",
     "test:e2e": "npm run test --prefix apps/sentinel-e2e",
     "test:e2e:ui": "npm run test:ui --prefix apps/sentinel-e2e",
-    "prepare": "npx husky init"
+    "prepare": "npx husky install",
+    "concurrently:dev-and-test": "concurrently \"npm run dev:sentinel-ui\" \"npm run test:e2e\"",
+    "concurrently:install": "concurrently \"npm install --prefix apps/sentinel-ui\" \"npm install --prefix apps/sentinel-e2e\""
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "husky": "^9.1.5",
     "prettier": "^3.3.3"
   },
