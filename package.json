@@ -6,6 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:sentinel-ui": "npm run dev --prefix apps/sentinel-ui",
     "test:e2e": "npm run test --prefix apps/sentinel-e2e",
+    "test:e2e:ci": "start-server-and-test dev:sentinel-ui http://localhost:3300 test:e2e",
     "test:e2e:ui": "npm run test:ui --prefix apps/sentinel-e2e",
     "prepare": "npx husky install",
     "concurrently:dev-and-test": "concurrently \"npm run dev:sentinel-ui\" \"npm run test:e2e\"",
@@ -17,7 +18,9 @@
   "devDependencies": {
     "concurrently": "^7.0.0",
     "husky": "^9.1.5",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "start-server-and-test": "^2.0.5",
+    "wait-on": "^8.0.0"
   },
   "volta": {
     "node": "20.17.0",
