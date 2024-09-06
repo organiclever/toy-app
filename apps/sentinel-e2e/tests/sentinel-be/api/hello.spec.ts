@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
-
-const BASE_URL = 'http://localhost:8080';
+import { BASE_URL } from './config';
 
 test.describe('Sentinel Backend API', () => {
   test('GET /api/v1/hello should return hello world message', async ({

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL } from '../../config';
+import { BASE_URL } from './config';
 
 test.describe('Greeting page', () => {
   test('should display hello with name from query string', async ({ page }) => {
