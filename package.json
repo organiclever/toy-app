@@ -10,7 +10,8 @@
     "test:e2e:ui": "npm run test:ui --prefix apps/sentinel-e2e",
     "prepare": "npx husky install",
     "concurrently:dev-and-test": "concurrently \"npm run dev:sentinel-ui\" \"npm run test:e2e\"",
-    "concurrently:install": "concurrently \"npm install --prefix apps/sentinel-ui\" \"npm install --prefix apps/sentinel-e2e\""
+    "concurrently:install": "concurrently \"npm install --prefix apps/sentinel-ui\" \"npm install --prefix apps/sentinel-e2e\"",
+    "dev:sentinel-be": "cd apps/sentinel-be && ./mvnw spring-boot:run"
   },
   "author": "",
   "license": "ISC",
