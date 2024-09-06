@@ -16,12 +16,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'adopt'
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -40,6 +34,6 @@ jobs:
         run: npx playwright install --with-deps chromium firefox webkit
 
       - name: Run end-to-end tests
-        run: xvfb-run --auto-servernum --server-args="-screen 0 1280x960x24" -- npm run test:e2e:ci
+        run: npm run test:e2e:ci
         env:
           DEBUG: pw:api
