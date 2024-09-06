@@ -12,7 +12,25 @@ test.describe('Sentinel Backend API', () => {
     const responseBody = await response.json();
     expect(responseBody).toEqual({
       data: {
-        message: 'hello world',
+        message: 'Hello World!',
+      },
+    });
+  });
+
+  test('GET /api/v1/hello with name parameter should return personalized message', async ({
+    request,
+  }) => {
+    const response = await request.get(
+      'http://localhost:8080/api/v1/hello?name=John'
+    );
+
+    expect(response.ok()).toBeTruthy();
+    expect(response.status()).toBe(200);
+
+    const responseBody = await response.json();
+    expect(responseBody).toEqual({
+      data: {
+        message: 'Hello John!',
       },
     });
   });
