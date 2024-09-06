@@ -25,7 +25,7 @@ jobs:
         id: sdkman
         with:
           candidate: java
-          version: 21.0.3-ms
+          version: 15.0.0-amzn
 
       - name: Install dependencies
         run: npm install
