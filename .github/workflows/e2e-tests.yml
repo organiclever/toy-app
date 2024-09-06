@@ -20,11 +20,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Set up Java
-        uses: sdkman/sdkman-action@v1
 
-      - name: install Java
-        run: sdk install java 21.0.3-ms
+      - uses: sdkman/sdkman-action@v1
+        id: sdkman
+        with:
+          candidate: java
+          version: 21.0.3-ms
 
       - name: Install dependencies
         run: npm install
