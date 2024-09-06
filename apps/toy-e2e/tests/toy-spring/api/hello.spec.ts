@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { BASE_URL } from './config';
+import { toySpring } from '../../config';
 
 test.describe('Toy Spring Backend API', () => {
   test('GET /api/v1/hello should return hello world message', async ({
     request,
   }) => {
-    const response = await request.get(`${BASE_URL}/api/v1/hello`);
+    const response = await request.get(`${toySpring.baseUrl}/api/v1/hello`);
 
     expect(response.ok()).toBeTruthy();
     expect(response.status()).toBe(200);
@@ -21,7 +21,9 @@ test.describe('Toy Spring Backend API', () => {
   test('GET /api/v1/hello with name parameter should return personalized message', async ({
     request,
   }) => {
-    const response = await request.get(`${BASE_URL}/api/v1/hello?name=John`);
+    const response = await request.get(
+      `${toySpring.baseUrl}/api/v1/hello?name=John`
+    );
 
     expect(response.ok()).toBeTruthy();
     expect(response.status()).toBe(200);
