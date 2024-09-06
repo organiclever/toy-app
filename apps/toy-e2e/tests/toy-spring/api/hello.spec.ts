@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { BASE_URL } from './config';
 
-test.describe('Sentinel Backend API', () => {
+test.describe('Toy Spring Backend API', () => {
   test('GET /api/v1/hello should return hello world message', async ({
     request,
   }) => {

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>sentinel-be</artifactId>
+	<artifactId>toy-spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>sentinel-be</name>
-	<description>Sentinel BE project</description>
+	<name>toy-spring</name>
+	<description>Toy Spring project</description>
 	<url/>
 	<licenses>
 		<license/>

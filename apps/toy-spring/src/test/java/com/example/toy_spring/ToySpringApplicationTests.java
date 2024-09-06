@@ -1,10 +1,10 @@
-package com.example.sentinel_be;
+package com.example.toy_spring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SentinelBeApplicationTests {
+class ToySpringApplicationTests {
 
 	@Test
 	void contextLoads() {

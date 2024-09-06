@@ -1,13 +1,13 @@
-package com.example.sentinel_be;
+package com.example.toy_spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SentinelBeApplication {
+public class ToySpringApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SentinelBeApplication.class, args);
+		SpringApplication.run(ToySpringApplication.class, args);
 	}
 
 }

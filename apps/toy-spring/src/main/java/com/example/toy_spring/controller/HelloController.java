@@ -1,4 +1,4 @@
-package com.example.sentinel_be.controller;
+package com.example.toy_spring.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
