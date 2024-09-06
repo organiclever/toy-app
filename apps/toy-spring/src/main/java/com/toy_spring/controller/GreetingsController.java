@@ -1,4 +1,4 @@
-package com.example.toy_spring.controller;
+package com.toy_spring.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
