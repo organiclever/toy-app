@@ -28,6 +28,9 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
+        run: npm install
+
+      - name: Install ci dependencies
         run: npm ci
 
       - name: Install projects
@@ -36,23 +39,5 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Start backend server
-        run: npm run dev:sentinel-be &
-        working-directory: apps/sentinel-be
-
-      - name: Wait for backend server
-        run: |
-          timeout 60s bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:8080/api/v1/hello)" != "200" ]]; do sleep 5; done' || false
-
       - name: Run end-to-end tests
         run: npm run test:e2e:ci
-        env:
-          DEBUG: pw:api
-
-      - name: Upload Playwright report
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: playwright-report
-          path: apps/sentinel-e2e/playwright-report
-          retention-days: 30
