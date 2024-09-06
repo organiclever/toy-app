@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+*.session.sql
+*.db
+
+/dbs/toy-spring.db
