@@ -1,7 +1,7 @@
-import { useEffect, FC } from 'react';
+import React, { useEffect, FC } from 'react';
 import { render, Box, Text } from 'ink';
-import DigitalClock from './DigitalClock';
-import StarWarsCharacters from './StarWarsCharacters';
+import DigitalClock from './DigitalClock.js';
+import StarWarsCharacters from './StarWarsCharacters.js';
 
 const App: FC = () => {
   useEffect(() => {
