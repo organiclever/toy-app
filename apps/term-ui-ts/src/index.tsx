@@ -1,4 +1,4 @@
-import React, { useEffect, FC } from 'react';
+import { useEffect, FC } from 'react';
 import { render, Box, Text } from 'ink';
 import DigitalClock from './DigitalClock';
 import StarWarsCharacters from './StarWarsCharacters';
