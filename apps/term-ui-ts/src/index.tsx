@@ -16,7 +16,7 @@ const App: FC = () => {
   return (
     <Box flexDirection="column" alignItems="center">
       <Text bold>Digital Clock</Text>
-      <Box height={1} />
+      <Box marginBottom={1} />
       <DigitalClock />
       <StarWarsCharacters />
     </Box>
