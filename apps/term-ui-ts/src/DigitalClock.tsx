@@ -36,13 +36,16 @@ const DigitalClock: FC = () => {
       .map((_, row) => (
         <Text key={row}>
           {digits.map((digit, index) => (
-            <Text key={index} color={digit === 10 ? 'yellow' : 'green'}>
-              {digit === 10
-                ? row === 1 || row === 3
-                  ? ' ● '
-                  : '   '
-                : bigDigits[digit][row]}
-            </Text>
+            <React.Fragment key={index}>
+              <Text color={digit === 10 ? 'yellow' : 'green'}>
+                {digit === 10
+                  ? row === 1 || row === 3
+                    ? ' ● '
+                    : '   '
+                  : bigDigits[digit][row]}
+              </Text>
+              {index < digits.length - 1 && <Text> </Text>}
+            </React.Fragment>
           ))}
         </Text>
       ));

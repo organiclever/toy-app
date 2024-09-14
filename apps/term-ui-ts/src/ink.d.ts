@@ -1,7 +1,16 @@
-declare module 'ink' {
-  import { FC, ReactNode } from 'react';
+import { FC, PropsWithChildren } from 'react';
 
-  export const render: (tree: ReactNode) => void;
-  export const Box: FC<{ flexDirection?: string; alignItems?: string }>;
-  export const Text: FC<{ bold?: boolean; color?: string }>;
+declare module 'ink' {
+  export interface TextProps {
+    bold?: boolean;
+    color?: string;
+  }
+
+  export interface BoxProps {
+    flexDirection?: string;
+    alignItems?: string;
+  }
+
+  export const Text: FC<PropsWithChildren<TextProps>>;
+  export const Box: FC<PropsWithChildren<BoxProps>>;
 }
