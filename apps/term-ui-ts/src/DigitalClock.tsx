@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text } from 'ink';
 
-const DigitalClock: React.FC = () => {
-  const [time, setTime] = React.useState(new Date());
+interface DigitalClockProps {
+  initialTime?: Date;
+  updateInterval?: number; // Add this prop for testing
+}
 
-  React.useEffect(() => {
+const DigitalClock: React.FC<DigitalClockProps> = ({
+  initialTime,
+  updateInterval = 1000,
+}) => {
+  const [time, setTime] = useState(initialTime || new Date());
+
+  useEffect(() => {
     const timer = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
+      setTime((prevTime) => new Date(prevTime.getTime() + updateInterval));
+    }, updateInterval);
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+    return () => clearInterval(timer);
+  }, [updateInterval]);
 
   return <Text>{time.toLocaleTimeString()}</Text>;
 };
