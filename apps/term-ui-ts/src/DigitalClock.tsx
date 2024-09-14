@@ -1,6 +1,5 @@
 import React, { useState, useEffect, FC } from 'react';
 import { Box, Text } from 'ink';
-import StarWarsCharacters from './StarWarsCharacters';
 
 const bigDigits = [
   [' ███ ', '█   █', '█   █', '█   █', ' ███ '], // 0
@@ -58,7 +57,6 @@ const DigitalClock: FC = () => {
       <Box height={1} />
       <Text>Press Ctrl+C to exit</Text>
       <Box height={1} />
-      <StarWarsCharacters />
     </Box>
   );
 };

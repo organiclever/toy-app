@@ -1,6 +1,7 @@
 import React, { useEffect, FC } from 'react';
 import { render, Box, Text } from 'ink';
 import DigitalClock from './DigitalClock';
+import StarWarsCharacters from './StarWarsCharacters';
 
 const App: FC = () => {
   useEffect(() => {
@@ -17,6 +18,7 @@ const App: FC = () => {
       <Text bold>Digital Clock</Text>
       <Box height={1} />
       <DigitalClock />
+      <StarWarsCharacters />
     </Box>
   );
 };
