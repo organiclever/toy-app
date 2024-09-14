@@ -1,6 +1,6 @@
 import React, { useState, useEffect, FC } from 'react';
-import { Box, Text, useStdout } from 'ink';
-import axios from 'axios';
+import { Box, Text } from 'ink';
+import StarWarsCharacters from './StarWarsCharacters';
 
 const bigDigits = [
   [' ███ ', '█   █', '█   █', '█   █', ' ███ '], // 0
@@ -15,54 +15,18 @@ const bigDigits = [
   [' ███ ', '█   █', '█████', '    █', ' ███ '], // 9
 ];
 
-interface Person {
-  name: string;
-  height: string;
-  mass: string;
-}
-
 const DigitalClock: FC = () => {
   const [time, setTime] = useState(new Date());
-  const [people, setPeople] = useState<Person[]>([]);
-  const [loading, setLoading] = useState(true);
-  const { write } = useStdout();
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
 
-    // Spinner animation
-    const spinnerChars = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
-    let i = 0;
-    const spinnerInterval = setInterval(() => {
-      if (loading) {
-        write(`\r${spinnerChars[i]} Loading Star Wars characters...`);
-        i = (i + 1) % spinnerChars.length;
-      } else {
-        // Clear the spinner line when loading is complete
-        write('\r\x1b[K');
-        clearInterval(spinnerInterval);
-      }
-    }, 80);
-
-    // Fetch SWAPI people data
-    axios
-      .get('https://swapi.dev/api/people/?page=1&page_size=20')
-      .then((response) => {
-        setPeople(response.data.results);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching SWAPI data:', error);
-        setLoading(false);
-      });
-
     return () => {
       clearInterval(timer);
-      clearInterval(spinnerInterval);
     };
-  }, []); // Add empty dependency array here
+  }, []);
 
   const renderBigDigits = (timeString: string) => {
     const digits = timeString
@@ -91,22 +55,10 @@ const DigitalClock: FC = () => {
   return (
     <Box flexDirection="column" alignItems="center">
       {renderBigDigits(time.toLocaleTimeString('en-US', { hour12: false }))}
-      {/* Add empty Box components for vertical spacing */}
-      <Box marginY={1} />
+      <Box height={1} />
       <Text>Press Ctrl+C to exit</Text>
-
-      {/* Display SWAPI people data */}
-      <Box marginY={1} />
-      <Text>Star Wars Characters:</Text>
-      {loading ? (
-        <Text>Loading...</Text>
-      ) : (
-        people.map((person, index) => (
-          <Text key={index}>
-            {person.name} - Height: {person.height}, Mass: {person.mass}
-          </Text>
-        ))
-      )}
+      <Box height={1} />
+      <StarWarsCharacters />
     </Box>
   );
 };
