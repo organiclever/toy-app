@@ -15,6 +15,7 @@ const App: FC = () => {
   return (
     <Box flexDirection="column" alignItems="center">
       <Text bold>Digital Clock</Text>
+      <Box height={1} />
       <DigitalClock />
     </Box>
   );

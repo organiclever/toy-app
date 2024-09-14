@@ -54,6 +54,8 @@ const DigitalClock: FC = () => {
   return (
     <Box flexDirection="column" alignItems="center">
       {renderBigDigits(time.toLocaleTimeString('en-US', { hour12: false }))}
+      {/* Add empty Box components for vertical spacing */}
+      <Box height={1} />
       <Text>Press Ctrl+C to exit</Text>
     </Box>
   );
