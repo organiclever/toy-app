@@ -24,7 +24,8 @@
     "clean:all": "npm run clean && rm -rf package-lock.json apps/*/package-lock.json",
     "reset:all": "npm run clean:all && npm install && npm run concurrently:install",
     "reset:root": "npm run clean:root && npm install",
-    "reset:apps": "npm run clean:apps && npm run concurrently:install"
+    "reset:apps": "npm run clean:apps && npm run concurrently:install",
+    "test:term-ui-ts": "cd apps/term-ui-ts && npm run test"
   },
   "author": "",
   "license": "ISC",
