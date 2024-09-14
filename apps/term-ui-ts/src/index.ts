@@ -1,0 +1,3 @@
+import React from 'react';
+import { render } from 'ink';
+// ... rest of your imports and code ...
